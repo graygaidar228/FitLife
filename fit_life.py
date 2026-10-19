@@ -1,9 +1,5 @@
 # Проект FitLife - MVP версия 1.0
 
-def check_name(user_name):
-    """Проверка имени"""
-    return bool(user_name.strip() != "")
-
 
 def check_age(user_age):
     """Проверка возраста"""
@@ -51,7 +47,7 @@ def check_height(user_height):
 # 1. Знакомство
 while True:
     user_name = str(input("Как тебя зовут?\n").title().strip())
-    if check_name(user_name):
+    if user_name != "":
         break
     else:
         print("Давайте попробуем снова.")
