@@ -2,11 +2,7 @@
 
 def check_name(user_name):
     """Проверка имени"""
-    if user_name.strip() == "":
-        return False
-    else:
-        return True
-
+    return user_name.strip() != ""
 
 def check_age(user_age):
     """Проверка возраста"""
