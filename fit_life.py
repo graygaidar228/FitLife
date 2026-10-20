@@ -3,21 +3,19 @@
 
 def check_age(user_age):
     """Проверка возраста"""
-    last_number = str(user_age)[-1]
-    if last_number in "056789":
-        age_word = "лет"
-    if last_number in "234":
-        age_word = "года"
-    if last_number in "1":
-        age_word = "год"
-    if user_age < 18:
-        print("Извините, мы не предоставляем услуги лицам меньше 18 лет")
-        exit()
-    elif 18 < user_age <= 90:
-        return True, age_word
-    else:
+    if not (0 < user_age <= 115):
         print("Неккоректный возраст")
-        return False
+        return False, None
+    last_number = user_age % 10
+    if 11 <= user_age % 100 <= 14:
+        age_word = "лет"
+    elif last_number == 1:
+        age_word = "год"
+    elif last_number in (2, 3, 4):
+        age_word = "года"
+    else:
+        age_word = "лет"
+    return True, age_word
 
 
 def check_weight(user_weight):
